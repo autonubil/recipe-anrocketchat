@@ -1,19 +1,32 @@
-module.exports = Franz => class RocketChat extends Franz {
-  async validateUrl(url) {
-    try {
-      const resp = await window.fetch(`${url}/api/info`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await resp.json();
+'use strict';
 
-      return Object.hasOwnProperty.call(data, 'version');
-    } catch (err) {
-      console.error(err);
-    }
+function _asyncToGenerator(fn) {
+  return function () {
+    var gen = fn.apply(this, arguments);
+    return new Promise(function (resolve, reject) {
+      function step(key, arg) {
+        try {
+          var info = gen[key](arg);
+          var value = info.value;
+        } catch (error) {
+          reject(error);
+          return;
+        }
+        if (info.done) {
+          resolve(value);
+        } else {
+          return Promise.resolve(value).then(function (value) {
+            step("next", value);
+          }, function (err) {
+            step("throw", err);
+          });
+        }
+      }
+      return step("next");
+    });
+  };
+}
 
-    return false;
-  }
+module.exports = Franz => class AnRocketChat extends Franz {
+
 };
