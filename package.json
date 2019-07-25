@@ -1,16 +1,15 @@
 {
-  "id": "rocketchat",
-  "name": "Rocket.Chat",
+  "id": "an-rocketchat",
+  "name": "autonubil Rocket.Chat",
   "version": "1.0.6",
-  "description": "Rocket.Chat",
+  "description": "autonubil Rocket.Chat",
   "main": "index.js",
-  "author": "Stefan Malzner <stefan@adlk.io>",
+  "author": "Carsten Zeumer <carsten.zeumer@autonubil.de>",
   "license": "MIT",
   "config": {
-    "serviceURL": "https://{teamId}.rocket.chat",
+    "serviceURL": "https://chat.autonubil.net",
     "hasNotificationSound": true,
-    "hasCustomUrl": true,
-    "hasTeamId": true,
-    "urlInputSuffix": ".rocket.chat"
+    "hasCustomUrl": false,
+    "hasTeamId": false
   }
 }
